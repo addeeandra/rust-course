@@ -1,17 +1,20 @@
-fn main() {
-    // let my_string = String::from("How's it going? My name is Adit.");
-    let mut my_string = String::from("How's it going? My name is Adit.");
+struct Person {
+    name: String,
+    age: u8
+}
 
-    println!("Length : {}", my_string.len());
-    println!("Is empty? {}", my_string.is_empty());
+// rust default trait (available within Rust it self)
+impl ToString for Person {
 
-    for token in my_string.split_whitespace() {
-        println!("{}", token);
+    fn to_string(&self) -> String {
+        format!("My name is {} and I am {}.", self.name, self.age)
     }
 
-    println!("Does the string contains 'Adit'? {}", my_string.contains("Adit"));
+}
 
-    // my_string should let mut my_string
-    my_string.push_str(" Welcome!");
-    println!("{}", my_string);
+// trait is like an interface in Java or similar language
+fn main() {
+    let adit = Person { name: String::from("Aditya Chandra"), age: 21 };
+
+    println!("{}", adit.to_string()); // my name is Aditya Chandra and I am 21.
 }
