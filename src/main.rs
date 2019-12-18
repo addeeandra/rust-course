@@ -1,17 +1,13 @@
 fn main() {
-    let mut n = 0;
+    let mut n = 1;
 
-    loop {
+    while n < 50 {
+
+        // print only 5 multiplier
+        if n % 5 == 0 {
+            println!("n is {}", n);
+        }
+
         n += 1;
-
-        if n == 7 {
-            continue;
-        }
-
-        if n > 10 {
-            break;
-        }
-
-        println!("The value of n is {}", n);
     }
 }
