@@ -1,12 +1,6 @@
 fn main() {
-    let x = 45;
-    let mut y = 35;
-
-    println!("The value of x is {}", x);
-    println!("The value of y is {}", y);
-
-    // x = 50; // error
-    y = 40;
-
-    println!("The value of y is {}", y);
+    let x: i64 = 55;
+    let y: u64 = 60; // unsigned integer
+    let f: f32 = 7.6;
+    let b: bool = false;
 }
