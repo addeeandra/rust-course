@@ -1,17 +1,21 @@
+struct Rectangle {
+    width: u32,
+    height: u32
+}
+
+impl Rectangle {
+    fn print_description(&self) {
+        println!("Rectangle: {} x {}", self.width, self.height);
+    }
+    fn is_square(&self) -> bool {
+        self.width == self.height
+    }
+}
+
 fn main() {
-    // let numbers = [1, 2, 3, 4, 5];
-    // let numbers: [type; size] = [...];
-    // let numbers: [i32; 5] = [1, 2, 3, 4, 5];
-    let numbers = [2; 10]; // 2 tenth times
+    let my_rect = Rectangle { width: 10, height: 5 };
 
-    for n in numbers.iter() {
-        println!("n is {}", n);
-    }
+    my_rect.print_description();
 
-    // access by index
-    for n in 0..numbers.len() {
-        println!("n2 is {}", numbers[n]);
-    }
-
-    println!("index 3 is {}", numbers[3]);
+    println!("Rectangle is a square: {}", my_rect.is_square());
 }
