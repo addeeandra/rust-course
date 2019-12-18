@@ -1,16 +1,17 @@
+enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
 fn main() {
-    let numbers = 30..36;
-    for i in numbers {
-        println!("The number is {}", i);
-    }
+    let player_direction: Direction = Direction::Up;
 
-    let animals = vec!["Rabbit", "Dog", "Cat"];
-    for a in animals.iter() {
-        println!("The animal name is {}", a);
-    }
-
-    let people = vec!["Andi", "Rudi", "Adit"];
-    for (index, p) in people.iter().enumerate() {
-        println!("Person number {} is {}", index, p);
+    match player_direction {
+        Direction::Up => println!("Heading up!"),
+        Direction::Down => println!("Heading down!"),
+        Direction::Left => println!("Heading left!"),
+        Direction::Right => println!("Heading right!")
     }
 }
