@@ -1,11 +1,19 @@
 fn main() {
-    let x = 10;
-    {
-        // isolated
-        let y = 5;
+    let mut x = 10;
 
-        println!("x: {}, y: {}", x, y);
+    {
+        // shadowing
+        let x = 15;
+        println!("x is {}", x);
     }
 
-    println!("x: {}, y: {}", x, y); // error can't find y
+    println!("x is {}", x);
+
+    // shadowing
+    let x = "X is a string";
+    println!("x is {}", x);
+
+    // shadowing
+    let x = true;
+    println!("x is {}", x);
 }
