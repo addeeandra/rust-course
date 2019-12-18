@@ -1,13 +1,16 @@
 fn main() {
-    let mut n = 1;
+    let numbers = 30..36;
+    for i in numbers {
+        println!("The number is {}", i);
+    }
 
-    while n < 50 {
+    let animals = vec!["Rabbit", "Dog", "Cat"];
+    for a in animals.iter() {
+        println!("The animal name is {}", a);
+    }
 
-        // print only 5 multiplier
-        if n % 5 == 0 {
-            println!("n is {}", n);
-        }
-
-        n += 1;
+    let people = vec!["Andi", "Rudi", "Adit"];
+    for (index, p) in people.iter().enumerate() {
+        println!("Person number {} is {}", index, p);
     }
 }
