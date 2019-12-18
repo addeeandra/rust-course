@@ -1,14 +1,16 @@
+struct Color {
+    red: u8, // 0 - 255
+    green: u8,
+    blue: u8
+}
+
 fn main() {
-    let mut x = 10;
-    // let xr = &x; // references to x
+    let bg = Color { red: 255, green: 70, blue: 15 };
+    let mut bg2 = Color { red: 255, green: 70, blue: 15 };
 
-    println!("x is {}", x);
+    // bg.blue = 25; // error
+    bg2.blue = 25;
 
-    { // only able to borrow 1 mutable references (safety call inside a block)
-        let dom = &mut x; // references to x (mutable)
-        *dom += 1;
-        println!("dom is {}", dom);
-    }
-
-    println!("x is {}", x);
+    println!("Bg Color is : {}, {}, {}", bg.red, bg.green, bg.blue);
+    println!("Bg Color is : {}, {}, {}", bg2.red, bg2.green, bg2.blue);
 }
