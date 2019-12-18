@@ -1,12 +1,17 @@
 fn main() {
-    let tup1 = (20, 25, 30, 35);
-    let tup2 = (10, 3.4, "Rust", false, (1, 4, 6));
+    print_numbers_to(10);
+}
 
-    let tup3 = (45, 6.7, "Computer");
-    let (a, b, c) = tup3;
+fn print_numbers_to(num: u32) {
+    for n in 1..num {
+        if is_even(n) {
+            println!("{} is even!", n);
+        } else {
+            println!("{} is odd!", n);
+        }
+    }
+}
 
-    println!("{}", tup1.0);
-    println!("{}", tup2.2);
-    println!("{}", (tup2.4).2);
-    println!("a is {}, b is {}, c is {}", a, b, c);
+fn is_even(num: u32) -> bool {
+    return num % 2 == 0;
 }
