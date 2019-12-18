@@ -1,25 +1,17 @@
-struct Color {
-    red: u8,
-    green: u8,
-    blue: u8,
-}
-
 fn main() {
-    let blue = Color { red: 0, green: 0, blue: 255 };
-    let red = Color { red: 255, green: 0, blue: 0 };
+    // let numbers = [1, 2, 3, 4, 5];
+    // let numbers: [type; size] = [...];
+    // let numbers: [i32; 5] = [1, 2, 3, 4, 5];
+    let numbers = [2; 10]; // 2 tenth times
 
-    print_color_1(blue);
-    print_color_1(blue); // moved value, gain error
+    for n in numbers.iter() {
+        println!("n is {}", n);
+    }
 
-    print_color_2(&red);
-    print_color_2(&red); // not moved, cause the references are passed instead
-}
+    // access by index
+    for n in 0..numbers.len() {
+        println!("n2 is {}", numbers[n]);
+    }
 
-fn print_color_1(c: Color) {
-    println!("Color - R:{} G:{} B:{}", c.red, c.green, c.blue);
-}
-
-// pass by references to avoid borrowing
-fn print_color_2(c: &Color) {
-    println!("Color - R:{} G:{} B:{}", c.red, c.green, c.blue);
+    println!("index 3 is {}", numbers[3]);
 }
